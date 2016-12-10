@@ -1,0 +1,26 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<rxui:ReactiveViewCell xmlns="http://xamarin.com/schemas/2014/forms" 
+		xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+		xmlns:rxui="clr-namespace:ReactiveUI.XamForms;assembly=ReactiveUI.XamForms"
+		xmlns:vms="clr-namespace:MarvelFormsReactUI.ViewModels;assembly=MarvelFormsReactUI" 
+		x:Class="MarvelFormsReactUI.CharacterCell"
+		x:TypeArguments="vms:CharacterItemViewModel">
+		<StackLayout Spacing="0" Padding="0">
+			<Grid Style="{DynamicResource CardStyle}">
+				<Grid.ColumnDefinitions>
+					<ColumnDefinition Width="90"/>
+					<ColumnDefinition Width="*"/>
+					<ColumnDefinition Width="5"/>
+				</Grid.ColumnDefinitions>
+				<Image x:Name="imageThumbnail" Grid.Column="0" WidthRequest="60" HeightRequest="60"></Image>
+				<StackLayout Grid.Column="1" Spacing="0" Padding="0,5" Orientation="Vertical">
+					<Label x:Name="textName" 
+						HorizontalOptions="FillAndExpand" 
+						VerticalOptions="FillAndExpand" 
+						VerticalTextAlignment="Start" 
+						HorizontalTextAlignment="Start"
+						Style="{DynamicResource NameStyle}"></Label>
+				</StackLayout>
+			</Grid>
+		</StackLayout>
+</rxui:ReactiveViewCell>

@@ -1,0 +1,49 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<rxui:ReactiveContentPage xmlns="http://xamarin.com/schemas/2014/forms" 
+		xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+		x:Class="MarvelFormsReactUI.SearchView"
+		x:TypeArguments="vms:SearchViewModel" 
+		xmlns:rxui="clr-namespace:ReactiveUI.XamForms;assembly=ReactiveUI.XamForms"
+		xmlns:vms="clr-namespace:MarvelFormsReactUI.ViewModels;assembly=MarvelFormsReactUI" 
+		xmlns:local="clr-namespace:MarvelFormsReactUI;assembly=MarvelFormsReactUI"
+		Title="Marvel Characters">
+	<ContentPage.Content>
+		<Grid BackgroundColor="{DynamicResource CardBackgroundColor}">
+			<Grid.RowDefinitions>
+				<RowDefinition Height="44"></RowDefinition>
+				<RowDefinition Height="Auto"></RowDefinition>
+			</Grid.RowDefinitions>
+			<Grid.Padding>
+				<OnPlatform x:TypeArguments="Thickness" 
+					iOS="0, 0, 0, 0">
+				</OnPlatform>
+			</Grid.Padding>
+
+			<SearchBar Grid.Row="0" x:Name="searchCharacters"></SearchBar>
+
+			<ListView Grid.Row="1" x:Name="listCharacters"
+				HorizontalOptions="FillAndExpand"
+				VerticalOptions="FillAndExpand"
+				CachingStrategy="RecycleElement" 
+				SeparatorVisibility="None"
+				RowHeight="80" >
+
+<!--				<ListView.RowHeight>
+			        <OnPlatform x:TypeArguments="x:Int32">
+			            <OnPlatform.iOS>80</OnPlatform.iOS>
+			            <OnPlatform.Android>70</OnPlatform.Android>
+			            <OnPlatform.WinPhone>70</OnPlatform.WinPhone>
+			        </OnPlatform>
+			    </ListView.RowHeight>-->
+			    <ListView.ItemTemplate>
+			    	<DataTemplate>
+						<local:CharacterCell ViewModel="{Binding .}"/>
+			    	</DataTemplate>
+			    </ListView.ItemTemplate>
+			</ListView>
+
+			<ActivityIndicator Grid.RowSpan="2" x:Name="activityLoading"
+	                      VerticalOptions="Center" HorizontalOptions="Center" BackgroundColor="Transparent" />
+		</Grid>
+	</ContentPage.Content>
+</rxui:ReactiveContentPage>

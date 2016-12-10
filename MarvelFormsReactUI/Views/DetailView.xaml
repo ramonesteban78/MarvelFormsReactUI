@@ -1,0 +1,38 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<rxui:ReactiveContentPage 
+		xmlns="http://xamarin.com/schemas/2014/forms" 
+		xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+		xmlns:rxui="clr-namespace:ReactiveUI.XamForms;assembly=ReactiveUI.XamForms"
+		xmlns:vms="clr-namespace:MarvelFormsReactUI.ViewModels;assembly=MarvelFormsReactUI"
+		x:TypeArguments="vms:DetailViewModel" 
+		x:Class="MarvelFormsReactUI.DetailView">
+	<ContentPage.Content>
+		<Grid  BackgroundColor="#F44336">
+			<Grid.RowDefinitions>
+				<RowDefinition Height="320"></RowDefinition>
+				<RowDefinition Height="*"></RowDefinition>
+				<RowDefinition Height="Auto"></RowDefinition>
+			</Grid.RowDefinitions>
+
+			<Image x:Name="imageThumbnail" 
+				Grid.Row="0" 
+				HorizontalOptions="FillAndExpand" 
+				VerticalOptions="FillAndExpand" 
+				Aspect="Fill">
+			</Image>
+
+			<ContentView Grid.Row="1" Padding="5,5,5,5">
+				<Label x:Name="labelDescription"
+				HorizontalOptions="FillAndExpand" 
+				VerticalOptions="FillAndExpand" 
+				FontSize="13"
+				TextColor="#FFFFFF"></Label>
+			</ContentView>
+
+			<StackLayout Padding="10" Grid.Row="2">
+				<Button Text="Open Web" TextColor="White"></Button>
+			</StackLayout>
+
+		</Grid>
+	</ContentPage.Content>
+</rxui:ReactiveContentPage>
