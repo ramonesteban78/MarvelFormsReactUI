@@ -7,6 +7,7 @@ using System;
 using System.Reactive.Disposables;
 using MarvelFormsReactUI.Core.Services;
 using System.Collections.Generic;
+using System.ComponentModel;
 
 namespace MarvelFormsReactUI.ViewModels
 {
@@ -30,9 +31,10 @@ namespace MarvelFormsReactUI.ViewModels
 			// Search text and InvokeCommand
 			this.WhenAnyValue(x => x.SearchText)
 			    .Select (x => x?.Trim())
+			    .Throttle(TimeSpan.FromSeconds(.75))
 			    .DistinctUntilChanged()
-				.Where(x => !string.IsNullOrEmpty(x) && x.Length > 3)
-			    .InvokeCommand(SearchCharacters)
+			    .ObserveOn(RxApp.MainThreadScheduler)
+			    .InvokeCommand(SearchCharacters)	
 			    .DisposeWith(this.disposables);
 			
 			// Loading flag

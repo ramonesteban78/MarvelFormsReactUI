@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="UTF-8"?>
+<?xml version="1.0" encoding="UTF-8"?>
 <rxui:ReactiveContentPage xmlns="http://xamarin.com/schemas/2014/forms" 
 		xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
 		x:Class="MarvelFormsReactUI.SearchView"
@@ -43,7 +43,8 @@
 			</ListView>
 
 			<ActivityIndicator Grid.RowSpan="2" x:Name="activityLoading"
-	                      VerticalOptions="Center" HorizontalOptions="Center" BackgroundColor="Transparent" />
+	                      VerticalOptions="Center" HorizontalOptions="Center" 
+			BackgroundColor="Transparent" />
 		</Grid>
 	</ContentPage.Content>
 </rxui:ReactiveContentPage>
