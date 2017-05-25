@@ -16,12 +16,16 @@ namespace MarvelFormsReactUI
 			Locator.CurrentMutable.RegisterConstant(this, typeof(IScreen));
 
 			// Services
-			Locator.CurrentMutable.RegisterLazySingleton(() => new MarvelApiService(), typeof(IMarvelApiService));
+			Locator.CurrentMutable.RegisterLazySingleton(() => new MarvelApiService(), 
+			                                             typeof(IMarvelApiService));
 
 			// Views and ViewModels
-			Locator.CurrentMutable.RegisterLazySingleton(() => new SearchView(), typeof(IViewFor<SearchViewModel>));
-			Locator.CurrentMutable.RegisterLazySingleton(() => new DetailView(), typeof(IViewFor<DetailViewModel>));
-			Locator.CurrentMutable.RegisterLazySingleton(() => new CharacterItemViewModel(), typeof(IViewFor<CharacterCell>));
+			Locator.CurrentMutable.RegisterLazySingleton(() => new SearchView(), 
+			                                             typeof(IViewFor<SearchViewModel>));
+			Locator.CurrentMutable.RegisterLazySingleton(() => new DetailView(), 
+			                                             typeof(IViewFor<DetailViewModel>));
+			Locator.CurrentMutable.RegisterLazySingleton(() => new CharacterItemViewModel(), 
+			                                             typeof(IViewFor<CharacterCell>));
 
 			// Routing
 			Router = new RoutingState();

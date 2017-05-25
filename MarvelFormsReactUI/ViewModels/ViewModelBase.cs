@@ -6,8 +6,7 @@ using Splat;
 namespace MarvelFormsReactUI.ViewModels
 {
 	public class ViewModelBase : ReactiveObject, 
-									IDisposable, 
-									IEnableLogger, 
+									IDisposable,  
 									IRoutableViewModel
 	{
 		protected readonly CompositeDisposable disposables;

@@ -17,7 +17,8 @@ namespace MarvelFormsReactUI.ViewModels
 
 		public SearchViewModel (IMarvelApiService marvelService = null)
 		{
-			_marvelService = marvelService ?? Locator.CurrentMutable.GetService<IMarvelApiService>();
+			_marvelService = marvelService ?? 
+				Locator.CurrentMutable.GetService<IMarvelApiService>();
 
 			UrlPathSegment = "Marvel Characters Search";
 
