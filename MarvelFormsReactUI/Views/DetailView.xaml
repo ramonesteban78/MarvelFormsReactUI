@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="UTF-8"?>
+<?xml version="1.0" encoding="UTF-8"?>
 <rxui:ReactiveContentPage 
 		xmlns="http://xamarin.com/schemas/2014/forms" 
 		xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
@@ -30,7 +30,7 @@
 			</ContentView>
 
 			<StackLayout Padding="10" Grid.Row="2">
-				<Button Text="Open Web" TextColor="White"></Button>
+				<Button x:Name="btnOpenWeb" Text="Open Web" TextColor="White"></Button>
 			</StackLayout>
 
 		</Grid>

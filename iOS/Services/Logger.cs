@@ -1,7 +1,7 @@
-﻿using System;
+﻿﻿using System;
 using Splat;
 
-namespace MarvelFormsReactUI.iOS
+namespace MarvelFormsReactUI.iOS.Services
 {
 	public class Logger : ILogger
 	{

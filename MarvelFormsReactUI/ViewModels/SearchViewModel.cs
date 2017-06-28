@@ -18,7 +18,7 @@ namespace MarvelFormsReactUI.ViewModels
 		public SearchViewModel (IMarvelApiService marvelService = null)
 		{
 			_marvelService = marvelService ?? 
-				Locator.CurrentMutable.GetService<IMarvelApiService>();
+                Locator.Current.GetService<IMarvelApiService>();
 
 			UrlPathSegment = "Marvel Characters Search";
 
@@ -32,7 +32,7 @@ namespace MarvelFormsReactUI.ViewModels
 			// Search text and InvokeCommand
 			this.WhenAnyValue(x => x.SearchText)
 			    .Select (x => x?.Trim())
-			    .Throttle(TimeSpan.FromSeconds(.75))
+			    .Throttle(TimeSpan.FromSeconds(1))
 			    .DistinctUntilChanged()
 			    .ObserveOn(RxApp.MainThreadScheduler)
 			    .InvokeCommand(SearchCharacters)	

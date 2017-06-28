@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using System.Linq;
 
 using Foundation;
+using MarvelFormsReactUI.Core.Services;
+using MarvelFormsReactUI.iOS.Services;
 using Splat;
 using UIKit;
 
@@ -26,6 +28,7 @@ namespace MarvelFormsReactUI.iOS
 		private void InitAppServices()
 		{
 			Locator.CurrentMutable.RegisterLazySingleton(() => new Logger(), typeof(ILogger));
+            Locator.CurrentMutable.RegisterLazySingleton(() => new OpenWebService(), typeof(IOpenWebService));
 		}
 	}
 }

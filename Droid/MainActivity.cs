@@ -7,6 +7,9 @@ using Android.Runtime;
 using Android.Views;
 using Android.Widget;
 using Android.OS;
+using Splat;
+using MarvelFormsReactUI.Droid.Services;
+using MarvelFormsReactUI.Core.Services;
 
 namespace MarvelFormsReactUI.Droid
 {
@@ -20,9 +23,17 @@ namespace MarvelFormsReactUI.Droid
 
 			base.OnCreate(bundle);
 
+            InitAppServices();
+
 			global::Xamarin.Forms.Forms.Init(this, bundle);
 
 			LoadApplication(new App());
 		}
-	}
+
+        private void InitAppServices()
+        {
+			Locator.CurrentMutable.RegisterLazySingleton(() => new Logger(), typeof(ILogger));
+			Locator.CurrentMutable.RegisterLazySingleton(() => new OpenWebService(), typeof(IOpenWebService));
+        }
+    }
 }

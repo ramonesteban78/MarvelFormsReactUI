@@ -31,6 +31,11 @@ namespace MarvelFormsReactUI
 				                vm => vm.Character.Name,
 				                view => view.Title)
 				    			.DisposeWith(disposables);
+
+                this.BindCommand(ViewModel,
+                                 vm => vm.OpenWeb,
+                                 view => view.btnOpenWeb)
+                                .DisposeWith(disposables);
 			});
 		}
 	}
